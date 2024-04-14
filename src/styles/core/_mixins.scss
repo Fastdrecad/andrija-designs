@@ -4,17 +4,27 @@ $themes: (
   light: (
     background-color: $white,
     text-color: $black,
+    text-color-opposite: $white,
     primary-color: $primary-color,
     secondary-color: $gray,
-    logo-color: $theme-black
+    logo-color: $theme-black,
+    toggle-background: transparent,
+    text-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.75),
+    header-footer-background: #f6f6f6,
+    text-color-soft: #585858
   ),
 
   dark: (
     background-color: $black,
     text-color: $white,
+    text-color-opposite: $black,
     primary-color: $red,
     secondary-color: $gray,
-    logo-color: $theme-red
+    logo-color: $theme-red,
+    toggle-background: #14dc4b,
+    text-shadow-light: 0 3px 5px rgba(114, 114, 114, 0.8901960784),
+    header-footer-background: #161616,
+    text-color-soft: rgb(139, 138, 138)
   )
 );
 
@@ -40,8 +50,6 @@ $themes: (
 @function themed($key) {
   @return map-get($theme-map, $key);
 }
-
-// dark and light mode
 
 // breakpoints grid
 @mixin media-breakpoint-up($breakpoint) {

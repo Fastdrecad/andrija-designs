@@ -2,6 +2,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { useContext } from 'react';
 import { DarkModeContext } from './context/darkModeContext';
 import RoutesConfig from './routes/routes';
+import Header from '@components/Header';
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -9,6 +10,7 @@ function App() {
   return (
     <div className={`theme-${darkMode ? 'dark' : 'light'} app`}>
       <Router>
+        <Header />
         <RoutesConfig />
       </Router>
     </div>

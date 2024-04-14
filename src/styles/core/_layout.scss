@@ -128,7 +128,7 @@ h6,
 
 h1,
 .h1 {
-  font-size: 2em !important;
+  font-size: clamp(3rem, 4.7vw, 6rem) !important;
   font-weight: $font-weight-bold;
 }
 

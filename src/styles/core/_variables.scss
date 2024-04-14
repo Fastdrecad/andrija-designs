@@ -9,6 +9,19 @@ $breakpoints: (
   xxl: 1400px
 );
 
+$footerHeight: 220px;
+$navbarHeight: 65px;
+
+// hamburger menu
+$foreground: #333;
+$bar-width: 25px;
+$bar-height: 2px;
+$hamburger-gap: 5px;
+$hamburger-margin: 10px;
+$animation-timing: 300ms ease-in-out;
+$hamburger-height: calc(($bar-height * 3) + ($hamburger-gap * 2));
+$x-width: calc($hamburger-height * 1.41421356237);
+
 // standard colors
 $blue: #20a8d8;
 $indigo: #6610f2 !default;
@@ -68,10 +81,10 @@ $theme-pink: #ff3860;
 $theme-light-blue: #4a68aa;
 $theme-red: #b30606;
 
-$primary-color: #b30606;
+$primary-color: #303236;
 $primary-bg: $black;
 
-$secondary-color: #f8f9fa;
+$secondary-color: #ed2024;
 $secondary-bg: #f8f9fa;
 
 $danger-color: #fb0000;
