@@ -41,7 +41,11 @@ const Hero: React.FC = () => {
             }
             transition={{ delay: 0.5, duration: 0.5 }}
           >
-            <div className='hero__text-wrapper'>
+            <div
+              className={`hero__text-wrapper ${
+                isHeroTitleInView ? 'side-in' : ''
+              }`}
+            >
               <h1 className='h1'>
                 Andrija<span>Micunovic</span>
               </h1>

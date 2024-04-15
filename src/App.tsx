@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { DarkModeContext } from './context/darkModeContext';
 import RoutesConfig from './routes/routes';
 import Header from '@components/Header';
+import Footer from '@components/Footer';
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -12,6 +13,7 @@ function App() {
       <Router>
         <Header />
         <RoutesConfig />
+        <Footer />
       </Router>
     </div>
   );

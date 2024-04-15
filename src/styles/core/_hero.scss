@@ -2,16 +2,12 @@
   @include themify($themes) {
     position: relative;
     background-color: themed('background-color');
-    height: calc(100vh - $navbarHeight);
+    height: calc(90vh - $navbarHeight);
     margin-top: $navbarHeight;
 
     @include media-breakpoint-up(xl) {
-      height: calc(100vh - 200px);
+      height: calc(90vh - 200px);
       margin-top: 200px;
-    }
-
-    @include media-breakpoint-down(sm) {
-      height: calc(90vh - $navbarHeight);
     }
 
     &__container {
@@ -180,7 +176,7 @@
     &__scroll-to-web {
       position: absolute;
       right: 50px;
-      bottom: 25px;
+      bottom: -40px;
       z-index: 1;
       animation: bounce ease-in-out 1s infinite;
 
@@ -285,5 +281,17 @@
   100% {
     transform: translateY(20px);
     opacity: 1;
+  }
+}
+
+.side-in {
+  transform: translateX(0) !important;
+  opacity: 1 !important;
+
+  h1 {
+    &::after {
+      animation: curvedRedLine ease-in-out 1s;
+      animation-delay: 0.5s;
+    }
   }
 }
