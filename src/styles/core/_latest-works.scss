@@ -1,0 +1,98 @@
+.latest-works {
+  @include themify($themes) {
+    background-color: themed('background-color');
+    position: relative;
+
+    &__title {
+      color: themed('text-color') !important;
+      font-size: 2.75rem !important;
+      padding-top: 6rem;
+      padding-bottom: 4rem;
+      font-weight: $font-weight-medium;
+      text-transform: uppercase;
+      text-align: center;
+
+      span {
+        font-weight: $font-weight-bold;
+        font-size: inherit;
+        color: inherit;
+      }
+    }
+
+    &__image-gallery {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      background-color: themed('background-color');
+
+      & > li {
+        width: calc(100% / 4);
+        aspect-ratio: 1.6 / 1;
+        cursor: pointer;
+        overflow: hidden;
+
+        @include media-breakpoint-down(md) {
+          width: calc(100% / 2);
+        }
+
+        @include media-breakpoint-down(sm) {
+          width: calc(100%);
+        }
+      }
+
+      li {
+        /* hover */
+        &:hover .portfolio-item__overlay {
+          transform: scale(1);
+          box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        &:hover img {
+          transform: scale(1.1);
+          box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        &:hover .portfolio-item__overlay h4 {
+          transform: translateY(-50%);
+        }
+
+        &:hover .portfolio-item__overlay p {
+          transform: translateY(50%);
+        }
+      }
+    }
+
+    &__view-more {
+      width: 100%;
+      padding: 5rem;
+      text-align: center;
+      background-color: themed('header-footer-background');
+      position: relative;
+      z-index: 2;
+
+      &--link {
+        white-space: nowrap;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: uppercase;
+        text-decoration: none;
+        color: themed('text-color') !important;
+        font-size: clamp(16px, 5.3vw, 24px);
+        transition: all 150ms ease-in-out;
+        padding: 10px 25px;
+
+        &:hover {
+          color: themed('background-color') !important;
+          background-color: themed('text-color');
+          border-radius: 50px;
+          box-shadow: 0 0 10px 0 $secondary-color inset,
+            0 0 10px 4px $secondary-color;
+        }
+      }
+    }
+  }
+}

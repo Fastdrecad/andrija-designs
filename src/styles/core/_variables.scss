@@ -22,6 +22,9 @@ $animation-timing: 300ms ease-in-out;
 $hamburger-height: calc(($bar-height * 3) + ($hamburger-gap * 2));
 $x-width: calc($hamburger-height * 1.41421356237);
 
+// button color
+$buttonColor: #d4d4d4;
+
 // standard colors
 $blue: #20a8d8;
 $indigo: #6610f2 !default;

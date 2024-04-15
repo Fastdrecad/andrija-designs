@@ -32,7 +32,7 @@ const Video: React.FC = () => {
           <VideoSection />
           <span>imagination creates reality</span>
         </div>
-        <div className='video__popup-media'></div>
+        <div className='video__popup-media' />
       </div>
     </section>
   );

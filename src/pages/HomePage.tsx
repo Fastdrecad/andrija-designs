@@ -1,4 +1,5 @@
 import Hero from '@components/Hero';
+import LatestWorks from '@components/LatestWorks';
 import Video from '@components/Video';
 import { useEffect } from 'react';
 
@@ -13,7 +14,8 @@ const HomePage: React.FC = () => {
     <main className='home-sections' data-scroll>
       <Hero />
       <Video />
-      {/* <LatestWorks />
+      <LatestWorks />
+      {/* 
       <TimeIsNow />
       <Testimonials /> */}
     </main>
