@@ -1,0 +1,11 @@
+.home-sections {
+  @include themify($themes) {
+    width: 100%;
+    position: relative;
+    // min-height: calc(100dvh - $footerHeight - $navbarHeight);
+    // margin-top: $navbarHeight;
+    overflow: hidden;
+    color: themed(text-color);
+    background-color: themed('background-color');
+  }
+}

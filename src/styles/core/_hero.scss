@@ -1,0 +1,289 @@
+.hero {
+  @include themify($themes) {
+    position: relative;
+    background-color: themed('background-color');
+    height: calc(100vh - $navbarHeight);
+    margin-top: $navbarHeight;
+
+    @include media-breakpoint-up(xl) {
+      height: calc(100vh - 200px);
+      margin-top: 200px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      height: calc(90vh - $navbarHeight);
+    }
+
+    &__container {
+      height: 100%;
+      margin: auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+
+      @keyframes curvedRedLine {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100px;
+        }
+      }
+
+      @keyframes bgAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    }
+
+    &__controller {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+
+      @include media-breakpoint-down(lg) {
+        flex-direction: column;
+        gap: 50px;
+      }
+    }
+
+    &__image-container {
+      flex: 1;
+      @include center();
+
+      @include media-breakpoint-down(lg) {
+        margin: 0.9rem 0;
+      }
+    }
+
+    &__blob {
+      position: relative;
+      width: clamp(23rem, 83vw, 55rem);
+      height: clamp(23rem, 83vw, 55rem);
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        animation: gradient-colors 6s ease-in-out infinite,
+          blob-animation 5s ease-in-out infinite;
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+      }
+
+      img {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        animation: blob-animation 5s ease-in-out infinite;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      }
+    }
+
+    &__text {
+      flex: 1;
+      display: flex;
+
+      @include media-breakpoint-down(lg) {
+        flex: 0.5;
+        align-items: flex-start;
+      }
+
+      &-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: all 1s ease;
+
+        h1 {
+          color: themed('text-color') !important;
+          text-transform: capitalize;
+          font-size: clamp(3rem, 4.7vw, 6rem) !important;
+          font-weight: 300;
+          margin-bottom: clamp(14px, 3vw, 40px);
+          padding-bottom: clamp(20px, 3vw, 40px);
+          position: relative;
+          display: inline-block;
+
+          @include media-breakpoint-down(lg) {
+            text-align: center;
+          }
+
+          span {
+            color: inherit;
+            font-size: inherit;
+            font-weight: 700;
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100px;
+            height: 20px;
+            background: url('/red-curved-line.png') no-repeat left top;
+            background-size: clamp(50px, 7vw, 100px) auto;
+
+            @include media-breakpoint-down(lg) {
+              background-position: center top;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+          }
+        }
+
+        p {
+          font-size: clamp(1.7rem, 1.8vw, 2.9rem);
+          font-weight: 500;
+
+          @include media-breakpoint-down(lg) {
+            text-align: center;
+          }
+
+          span {
+            font-weight: inherit;
+            font-size: inherit;
+            color: $secondary-color;
+            display: inline-block;
+          }
+
+          @keyframes blink {
+            50% {
+              opacity: 1;
+            }
+            100% {
+              opacity: 0;
+            }
+          }
+        }
+      }
+    }
+
+    // scroll-to-web
+    &__scroll-to-web {
+      position: absolute;
+      right: 50px;
+      bottom: 25px;
+      z-index: 1;
+      animation: bounce ease-in-out 1s infinite;
+
+      &-text {
+        font-size: 1rem;
+        line-height: 9;
+        letter-spacing: 0;
+        margin-bottom: 10px;
+
+        p {
+          color: themed('text-color');
+          font-weight: 500;
+          font-size: 14px;
+          transform: rotateZ(-90deg);
+          margin: 0;
+        }
+      }
+
+      &-arrow-wrapper {
+        border-radius: 50%;
+        border: 1px solid themed('text-color');
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        position: relative;
+
+        .hero__scroll-to-web-arrow {
+          font-size: 25px;
+          fill: themed('text-color');
+        }
+      }
+
+      a {
+        transition: all 0.1s ease-in;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+
+        @include media-breakpoint-down(lg) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@keyframes bounce {
+  0% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 10px;
+  }
+  100% {
+    translate: 0 0;
+  }
+}
+
+@keyframes blob-animation {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+@keyframes gradient-colors {
+  0% {
+    background: #1d5bd7;
+  }
+  50% {
+    background: crimson;
+  }
+  100% {
+    background: #1d5bd7;
+  }
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  border: 0 !important;
+}
+
+@keyframes arrowAnimation {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(20px);
+    opacity: 1;
+  }
+}

@@ -1,9 +1,21 @@
-const HomePage = () => {
+import Hero from '@components/Hero';
+import { useEffect } from 'react';
+
+const HomePage: React.FC = () => {
+  useEffect(() => {
+    document.title = 'Home | andrija-micunovic-design';
+    return () => {
+      document.title = 'Default Title';
+    };
+  }, []);
   return (
-    <div>
-      <h1>Welcome to the Home Page</h1>
-      <p>This is the home page of our website.</p>
-    </div>
+    <main className='home-sections' data-scroll>
+      <Hero />
+      {/* <Video />
+      <LatestWorks />
+      <TimeIsNow />
+      <Testimonials /> */}
+    </main>
   );
 };
 

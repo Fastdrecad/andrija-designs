@@ -6,6 +6,7 @@
 
   &__menu-list {
     @include center();
+    padding: 0;
 
     &-item {
       margin-inline: 5px;
