@@ -1,5 +1,6 @@
 import Hero from '@components/Hero';
 import LatestWorks from '@components/LatestWorks';
+import TimeIsNow from '@components/TimeIsNow';
 import Video from '@components/Video';
 import { useEffect } from 'react';
 
@@ -15,8 +16,8 @@ const HomePage: React.FC = () => {
       <Hero />
       <Video />
       <LatestWorks />
-      {/* 
       <TimeIsNow />
+      {/* 
       <Testimonials /> */}
     </main>
   );

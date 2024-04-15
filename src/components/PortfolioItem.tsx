@@ -30,9 +30,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
   };
 
   const portfolioItemRef = useRef<HTMLLIElement>(null);
-  const isPortfolioItemInView = useInView(portfolioItemRef, {
-    once: true
-  });
+  const isPortfolioItemInView = useInView(portfolioItemRef);
 
   return (
     <>

@@ -12,10 +12,7 @@ interface LatestWorksProps {
 
 const LatestWorks: React.FC<LatestWorksProps> = () => {
   const latestWorksRef = useRef<HTMLUListElement>(null);
-  const isLatestWorksInView = useInView(latestWorksRef, {
-    margin: '-500px'
-    // once: true
-  });
+  const isLatestWorksInView = useInView(latestWorksRef);
 
   const dispatch = useDispatch();
 
