@@ -93,16 +93,16 @@
       font-weight: $font-weight-medium;
       transition: all 150ms ease-in-out;
       white-space: nowrap;
-      background-color: themed('hamburger');
       color: themed('text-color-opposite') !important;
+      background-color: themed('text-color') !important;
 
       &:hover {
         outline: none;
         border-color: $secondary-color;
         box-shadow: 0 0 10px 0 $secondary-color inset,
           0 0 10px 4px $secondary-color;
-        background-color: $white;
-        color: $black;
+        color: themed('text-color') !important;
+        background-color: themed('background-color') !important;
       }
     }
 
