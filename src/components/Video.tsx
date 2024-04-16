@@ -12,12 +12,17 @@ const Video: React.FC = () => {
         <motion.div
           className='video__section-title'
           ref={videoTitleRef}
-          initial={{ y: -150, opacity: 0 }}
+          initial={{ y: -200, opacity: 0 }}
           animate={isVideoTitleInView ? { y: 0, opacity: 1 } : {}}
           transition={{ duration: 1 }}
         >
           <h2>
-            lets get started <strong>your project</strong>
+            lets get started{' '}
+            <strong
+              className={`red-line ${isVideoTitleInView ? 'side-in' : ''}`}
+            >
+              your project
+            </strong>
           </h2>
         </motion.div>
         <p>

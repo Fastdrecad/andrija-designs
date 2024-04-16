@@ -5,7 +5,7 @@ import Modal from './Modal';
 interface PortfolioItemProps {
   url: string;
   title: string;
-  items: any[]; // Adjust the type as needed
+  items: { url: string; desc: string }[];
   id: number | string;
   projectName: string;
   category: string;
@@ -30,7 +30,9 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
   };
 
   const portfolioItemRef = useRef<HTMLLIElement>(null);
-  const isPortfolioItemInView = useInView(portfolioItemRef);
+  const isPortfolioItemInView = useInView(portfolioItemRef, {
+    once: true
+  });
 
   return (
     <>
@@ -39,7 +41,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
         className={className}
         initial={{ opacity: 0 }}
         animate={isPortfolioItemInView ? { opacity: 1 } : {}}
-        transition={{ duration: 1, delay: (id as number) * 0.2 }}
+        transition={{ duration: 1, delay: (id as number) * 0.225 }}
         key={id}
         id={id as string}
         onClick={handleClick}
