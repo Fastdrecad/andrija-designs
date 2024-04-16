@@ -1,0 +1,17 @@
+.about-page {
+  @include themify($themes) {
+    position: relative;
+    flex: 1 1 0%;
+    min-height: calc(100vh - $footerHeight - $navbarHeight);
+    background-color: themed('background-color');
+    color: themed('text-color');
+    margin-top: $navbarHeight;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 200px;
+    }
+  }
+}
