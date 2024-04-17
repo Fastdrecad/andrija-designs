@@ -15,8 +15,6 @@ const Header: React.FC = () => {
     dispatch(setCurrentRoute(url));
   };
 
-  console.log(isChecked);
-
   return (
     <header className='header'>
       <div className='header__desktop-fixed'>

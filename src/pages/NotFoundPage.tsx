@@ -1,3 +1,4 @@
+import pageTransition from '@components/pageTransition';
 import { Link } from 'react-router-dom';
 
 const NotFound = () => {
@@ -24,4 +25,6 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+const NotFoundWithTransition = pageTransition(NotFound);
+
+export default NotFoundWithTransition;

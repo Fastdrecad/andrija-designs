@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Confetti from 'react-confetti';
+import pageTransition from '@components/pageTransition';
 
 const SuccessPage: React.FC = () => {
   const [pieces, setPieces] = useState<number>(200);
@@ -31,4 +32,6 @@ const SuccessPage: React.FC = () => {
   );
 };
 
-export default SuccessPage;
+const SuccessPageWithTransition = pageTransition(SuccessPage);
+
+export default SuccessPageWithTransition;

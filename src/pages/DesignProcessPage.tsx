@@ -95,11 +95,7 @@ const DesignProcessBox: React.FC<DesignProcessBoxProps> = ({ index, item }) => {
         </span>
         <h4>{item.process}</h4>
       </div>
-      <DesignProcessImage
-        ref={titleRef}
-        item={item}
-        isVisible={isTitleVisible}
-      />
+      <DesignProcessImage item={item} />
       <div className='process-desc'>
         <p>{item.desc}</p>
       </div>
@@ -109,13 +105,9 @@ const DesignProcessBox: React.FC<DesignProcessBoxProps> = ({ index, item }) => {
 
 interface DesignProcessImageProps {
   item: DesignProcessItem;
-  isVisible: boolean;
 }
 
-const DesignProcessImage = React.forwardRef<
-  HTMLDivElement,
-  DesignProcessImageProps
->(({ item }) => {
+const DesignProcessImage: React.FC<DesignProcessImageProps> = ({ item }) => {
   const titleRef = useRef<HTMLDivElement>(null);
   const isTitleVisible = useInView(titleRef);
 
@@ -129,7 +121,7 @@ const DesignProcessImage = React.forwardRef<
       </div>
     </motion.div>
   );
-});
+};
 
 const DesignProcessWithTransition = pageTransition(DesignProcessPage);
 
