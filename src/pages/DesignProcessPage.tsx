@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { designProcess } from '../data';
+import pageTransition from '@components/pageTransition';
 
 interface DesignProcessItem {
   id: number;
@@ -130,4 +131,6 @@ const DesignProcessImage = React.forwardRef<
   );
 });
 
-export default DesignProcessPage;
+const DesignProcessWithTransition = pageTransition(DesignProcessPage);
+
+export default DesignProcessWithTransition;

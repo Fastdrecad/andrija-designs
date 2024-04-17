@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import contactHeroImg from '/contact-hero.jpg';
+import pageTransition from '@components/pageTransition';
 
 const ContactPage: React.FC = () => {
   useEffect(() => {
@@ -193,4 +194,6 @@ const ContactPage: React.FC = () => {
   );
 };
 
-export default ContactPage;
+const ContactPageWithTransition = pageTransition(ContactPage);
+
+export default ContactPageWithTransition;

@@ -1,5 +1,6 @@
 import AboutSection from '@components/AboutSection';
 import HeroSection from '@components/HeroSection';
+import pageTransition from '@components/pageTransition';
 import { useEffect } from 'react';
 
 const AboutPage: React.FC = () => {
@@ -18,4 +19,6 @@ const AboutPage: React.FC = () => {
   );
 };
 
-export default AboutPage;
+const AboutPageWithTransition = pageTransition(AboutPage);
+
+export default AboutPageWithTransition;

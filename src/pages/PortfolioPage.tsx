@@ -3,6 +3,7 @@ import { list, portfolio } from '../data';
 import PortfolioItem from '@components/PortfolioItem';
 import PortfolioList from '@components/PortfolioList';
 import { AnimatePresence } from 'framer-motion';
+import pageTransition from '@components/pageTransition';
 
 interface PortfolioItem {
   id: number;
@@ -70,7 +71,11 @@ const PortfolioPage: React.FC = () => {
         </ul>
       </div>
       <div className='portfolio-page__gallery-container'>
-        <AnimatePresence>
+        <AnimatePresence
+          initial={false}
+          onExitComplete={() => null}
+          mode='wait'
+        >
           <ul className='portfolio-page__image-gallery'>
             {data?.slice(0, next).map((el, i) => (
               <PortfolioItem
@@ -101,4 +106,6 @@ const PortfolioPage: React.FC = () => {
   );
 };
 
-export default PortfolioPage;
+const PortfolioPageWithTransition = pageTransition(PortfolioPage);
+
+export default PortfolioPageWithTransition;

@@ -3,6 +3,7 @@ import LatestWorks from '@components/LatestWorks';
 import Testimonials from '@components/Testimonials';
 import TimeIsNow from '@components/TimeIsNow';
 import Video from '@components/Video';
+import pageTransition from '@components/pageTransition';
 import { useEffect } from 'react';
 
 const HomePage: React.FC = () => {
@@ -23,4 +24,6 @@ const HomePage: React.FC = () => {
   );
 };
 
-export default HomePage;
+const HomePageWithTransition = pageTransition(HomePage);
+
+export default HomePageWithTransition;
