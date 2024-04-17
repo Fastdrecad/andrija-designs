@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import { createContext, useState, ReactNode } from 'react';
 
 interface MenuContextType {
   menuOpen: boolean;
@@ -12,7 +12,13 @@ export const MenuContext = createContext<MenuContextType>({
   isChecked: false
 });
 
-export const MenuContextProvider: React.FC = ({ children }) => {
+interface MenuContextProviderProps {
+  children: ReactNode;
+}
+
+export const MenuContextProvider: React.FC<MenuContextProviderProps> = ({
+  children
+}) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [isChecked, setIsChecked] = useState<boolean>(false);
 
@@ -26,8 +32,4 @@ export const MenuContextProvider: React.FC = ({ children }) => {
       {children}
     </MenuContext.Provider>
   );
-};
-
-export const useMenuContext = () => {
-  return useContext(MenuContext);
 };

@@ -87,7 +87,7 @@
       display: none;
     }
 
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(md) {
       &__hamburger-menu {
         &:has(input:focus-visible)::before,
         &:has(input:focus-visible)::after,
@@ -106,10 +106,12 @@
         & input,
         &::before,
         &::after {
+          position: relative;
+          z-index: 9999;
           content: '';
           width: $bar-width;
           height: $bar-height;
-          background-color: themed('text-color');
+          background-color: themed('hamburger');
           transform-origin: left center;
           border-radius: 9px;
           transition: opacity $animation-timing, width $animation-timing,

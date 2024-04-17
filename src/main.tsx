@@ -6,12 +6,15 @@ import store from './redux/store.ts';
 
 import './styles/style.scss';
 import { DarkModeContextProvider } from './context/darkModeContext.tsx';
+import { MenuContextProvider } from './context/navContext.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Provider store={store}>
       <DarkModeContextProvider>
-        <App />
+        <MenuContextProvider>
+          <App />
+        </MenuContextProvider>
       </DarkModeContextProvider>
     </Provider>
   </React.StrictMode>
