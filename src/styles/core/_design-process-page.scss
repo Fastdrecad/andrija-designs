@@ -27,7 +27,7 @@
     &__section-title {
       position: relative;
       margin: 0 auto;
-      color: themed('text-color');
+      color: themed('text-color') !important;
       line-height: 1.7;
 
       @include media-breakpoint-down(lg) {
@@ -46,6 +46,7 @@
     }
 
     &__title {
+      color: inherit !important;
       font-size: clamp(1.85rem, 4.25vw, 4.25rem) !important;
       position: relative;
       font-weight: $font-weight-thin;
@@ -85,7 +86,8 @@
     }
 
     &__sub-title {
-      font-size: clamp(3rem, 4.25vw, 4rem) !important;
+      color: themed('text-color') !important;
+      font-size: clamp(3rem, 2.5vw, 4rem) !important;
       font-weight: normal;
       padding-top: 80px;
 

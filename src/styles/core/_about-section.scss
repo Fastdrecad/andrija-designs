@@ -39,9 +39,11 @@
 
     &__text {
       position: relative;
+      color: themed('text-color') !important;
     }
 
     &__title {
+      color: inherit !important;
       font-size: 4.375rem !important;
       font-weight: 300;
       line-height: 6rem !important;
@@ -83,6 +85,7 @@
     }
 
     &__desc {
+      color: themed('text-color') !important;
       opacity: 0;
       transform: translateX(-300px);
       transition: all 1s ease;
@@ -90,6 +93,7 @@
       z-index: 1;
 
       p {
+        color: inherit;
         font-size: 20px;
         line-height: 32px;
       }
@@ -148,6 +152,7 @@
       text-align: right;
 
       span {
+        color: themed('text-color') !important;
         font-size: clamp(80px, 10vw, 120px) !important;
         text-align: right;
         font-family: 'Genit';

@@ -6,6 +6,7 @@ import AboutPage from '@pages/AboutPage';
 import ContactPage from '@pages/ContactPage';
 import NotFoundPage from '@pages/NotFoundPage';
 import DesignProcessPage from '@pages/DesignProcessPage';
+import SuccessPage from '@pages/SuccessPage';
 
 const RoutesConfig: React.FC = () => (
   <Routes>
@@ -14,6 +15,7 @@ const RoutesConfig: React.FC = () => (
     <Route path='/design-process' element={<DesignProcessPage />} />
     <Route path='/about' element={<AboutPage />} />
     <Route path='/contact' element={<ContactPage />} />
+    <Route path='/success' element={<SuccessPage />} />
     <Route path='*' element={<NotFoundPage />} />
   </Routes>
 );

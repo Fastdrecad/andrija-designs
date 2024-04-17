@@ -46,9 +46,10 @@
     }
 
     &__title-container {
-      color: themed('text-color');
+      color: themed('text-color') !important;
 
       h2 {
+        color: inherit !important;
         font-weight: 600;
         font-size: clamp(3rem, 4.25vw, 4rem) !important;
         text-align: center;
@@ -58,6 +59,7 @@
     }
 
     &__form-subtitle {
+      color: inherit;
       text-align: center;
       font-size: clamp(1.1rem, 2.7vw, 1.4rem);
       text-transform: none;
@@ -82,7 +84,6 @@
     &__form-input {
       width: 100%;
       background-color: #ffffffd3;
-      text-transform: capitalize;
       outline: none;
       font-size: clamp(1rem, 3.6vw, 1.35rem);
       padding: clamp(9px, 1.6vw, 12px);
@@ -98,7 +99,8 @@
     }
 
     &__error-message {
-      color: red;
+      color: $red;
+      padding-bottom: 30px;
       font-size: 1.7rem;
       text-align: left;
       font-weight: bold;
