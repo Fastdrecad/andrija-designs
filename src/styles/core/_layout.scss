@@ -29,6 +29,11 @@ html {
   }
 }
 
+@font-face {
+  font-family: 'Genit';
+  src: url('/fonts/Genit.otf');
+}
+
 body {
   background-color: $white;
   color: $font-color !important;

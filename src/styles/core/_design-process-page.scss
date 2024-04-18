@@ -47,7 +47,7 @@
 
     &__title {
       color: inherit !important;
-      font-size: clamp(1.85rem, 4.25vw, 4.25rem) !important;
+      font-size: clamp(2.75rem, 4.25vw, 4.25rem) !important;
       position: relative;
       font-weight: $font-weight-thin;
       text-transform: uppercase;
@@ -82,12 +82,13 @@
         display: block;
         text-transform: initial;
         font-weight: $font-weight-medium;
+        font-size: clamp(1.95rem, 4.25vw, 4.25rem) !important;
       }
     }
 
     &__sub-title {
       color: themed('text-color') !important;
-      font-size: clamp(3rem, 2.5vw, 4rem) !important;
+      font-size: 2.5rem !important;
       font-weight: normal;
       padding-top: 80px;
 

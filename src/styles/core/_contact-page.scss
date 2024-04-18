@@ -115,8 +115,9 @@
       border-radius: 50px;
       font-size: clamp(14px, 3.2vw, 20px);
       border: none;
-      font-weight: 500;
-      letter-spacing: 2px;
+      font-weight: $font-weight-semibold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
       cursor: pointer;
       transition: all 0.2s ease-in-out;
 

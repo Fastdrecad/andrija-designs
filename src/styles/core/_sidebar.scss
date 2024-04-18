@@ -13,7 +13,7 @@
       flex-direction: column;
       transform: translateX(-100%);
       transition: all $animation-timing;
-      z-index: 2;
+      z-index: 3;
 
       @include media-breakpoint-up(md) {
         display: none;

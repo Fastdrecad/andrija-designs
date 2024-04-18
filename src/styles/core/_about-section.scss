@@ -45,7 +45,7 @@
     &__title {
       color: inherit !important;
       font-size: 4.375rem !important;
-      font-weight: 300;
+      font-weight: $font-weight-thin;
       line-height: 6rem !important;
       position: relative;
       padding-bottom: 50px;
@@ -54,31 +54,37 @@
       transition: all 1s ease;
       opacity: 0;
 
-      .red-line {
+      @include media-breakpoint-down(md) {
+        font-size: 4rem !important;
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: 4rem;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100px;
+        height: 20px;
+        background: url('/red-curved-line.png') no-repeat;
+        background-size: 100px auto;
+
+        @include media-breakpoint-down(md) {
+          background-size: 80px auto;
+        }
+      }
+
+      .bold-title {
         overflow: hidden;
         display: block;
         font-weight: 500;
-        padding-bottom: 3rem;
-
-        &::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100px;
-          height: 20px;
-          background: url('/red-curved-line.png') no-repeat;
-          background-size: 100px auto;
-
-          @include media-breakpoint-down(md) {
-            background-size: 80px auto;
-          }
-        }
 
         @include media-breakpoint-down(md) {
           line-height: 5rem;
         }
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(sm) {
           font-size: 4rem;
         }
       }
@@ -91,22 +97,28 @@
       transition: all 1s ease;
       position: relative;
       z-index: 1;
+      font-size: 1.6rem;
+      line-height: 2.6rem;
 
       p {
         color: inherit;
-        font-size: 20px;
-        line-height: 32px;
+        font-size: inherit;
+        line-height: inherit;
+
+        strong {
+          font-size: 1.65rem;
+        }
       }
 
       ul {
-        font-size: 20px;
-        line-height: 32px;
+        font-size: inherit;
+        line-height: inherit;
         list-style: disc outside;
-        margin-bottom: 20px;
 
         li {
           padding-left: clamp(15px, 6vw, 30px);
-          line-height: 1.6;
+          padding-bottom: 15px;
+          line-height: 1.5;
           list-style: none;
           position: relative;
 
@@ -188,7 +200,7 @@
   transform: translateX(0) !important ;
   opacity: 1 !important;
 
-  &.red-line {
+  &.about-section__title {
     &::after {
       animation: curvedRedLine ease-in-out 1s;
     }

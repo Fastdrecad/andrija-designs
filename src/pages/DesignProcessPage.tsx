@@ -84,9 +84,6 @@ interface DesignProcessBoxProps {
 }
 
 const DesignProcessBox: React.FC<DesignProcessBoxProps> = ({ index, item }) => {
-  const titleRef = useRef<HTMLDivElement>(null);
-  const isTitleVisible = useInView(titleRef);
-
   return (
     <div className='design-process-box' id={`${index + 1}`}>
       <div className='process-num'>

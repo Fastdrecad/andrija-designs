@@ -1,13 +1,8 @@
-import { useRef } from 'react';
+import { useInView } from 'react-intersection-observer';
 import penImage from '/pen-image.png';
-import { motion, useInView } from 'framer-motion';
 
 const AboutSection: React.FC = () => {
-  const textRef = useRef<HTMLDivElement>(null);
-  const isTextRefInView = useInView(textRef, {
-    amount: 0.5,
-    once: true
-  });
+  const { ref: ref1, inView: titleIsVisible } = useInView();
 
   return (
     <div className='about-section'>
@@ -15,79 +10,132 @@ const AboutSection: React.FC = () => {
         <div className='about-section__part'>
           <div className='about-section__content'>
             <div className='about-section__text'>
-              <motion.h3
-                ref={textRef}
+              <h3
+                ref={ref1}
                 className={`about-section__title ${
-                  isTextRefInView ? 'fade-in' : ''
+                  titleIsVisible ? 'fade-in' : ''
                 }`}
               >
                 Andrija
-                <strong
-                  className={`red-line ${isTextRefInView ? 'fade-in' : ''}`}
-                >
-                  Micunovic
-                </strong>
-              </motion.h3>
+                <strong className='bold-title'>Micunovic</strong>
+              </h3>
 
-              <motion.div
+              <div
+                ref={ref1}
                 className={`about-section__desc ${
-                  isTextRefInView ? 'fade-in' : ''
+                  titleIsVisible ? 'fade-in' : ''
                 }`}
               >
                 <p>
-                  &quot;Creative, both technically qualified and artistically
-                  gifted, excellent skill set, responsive, a strong sense of
-                  design and expertise, very thorough attention to detail,
-                  delivered outstanding designs.&quot; These are just some of
-                  the feedback from my clients.
+                  Welcome to the world of innovative design and exceptional
+                  creativity. As a distinguished Furniture and Product Designer
+                  & 3D Artist, I bring forth a legacy of unparalleled expertise
+                  and a track record of delivering excellence. With a blend of
+                  technical prowess and artistic finesse, I am committed to
+                  transforming visions into tangible masterpieces that captivate
+                  and inspire.
                 </p>
                 <br />
                 <p>
-                  I’m a Furniture & Product Designer and CAD professional with
-                  expertise in the usage of top industry tools including 3ds
-                  Max, V-ray, Corona, Marvelous Designer, Zbrush, Keyshot,
-                  Photoshop, and Design Engineering Software such as Inventor,
-                  SolidWorks, and AutoCAD.
+                  <strong>Client Testimonials</strong>
+                </p>
+                <p>
+                  Clients praise my blend of technical expertise and artistic
+                  flair, emphasizing my responsiveness, attention to detail, and
+                  ability to deliver outstanding designs.
+                </p>
+
+                <br />
+                <p>
+                  My journey is defined by the resounding accolades of clients
+                  who have experienced the magic of my creations. Feedback from
+                  platforms like Upwork and collaborations with world-renowned
+                  companies bear testimony to qualities such as creativity,
+                  technical acumen, responsiveness, and an unwavering commitment
+                  to perfection.
+                </p>
+                <br />
+
+                <p>
+                  <strong>Portfolio Highlights</strong>
+                </p>
+
+                <p>
+                  Having partnered with esteemed entities including StreetForms,
+                  ergoCentric, Holdenart, Project Direct, and many others, my
+                  portfolio boasts a diverse array of projects that showcase
+                  versatility and ingenuity. Each collaboration is a testament
+                  to my ability to exceed expectations and push the boundaries
+                  of conventional design.
+                </p>
+                <br />
+
+                <p>
+                  <strong>Skills Mastery</strong>
+                </p>
+
+                <p>
+                  Proficient in industry-leading software such as 3ds Max,
+                  V-ray, Solidworks, Inventor and AutoCAD, I bring a mastery of
+                  digital tools to every project.
                 </p>
                 <br />
                 <p>
-                  StreetForms, ergoCentric, Holdenart, Project Direct, Inside
-                  Weather, Atlas, Aark London, Sovereign Furniture, Jaxon Home,
-                  Chic Shack, and other well-known companies are just a few of
-                  the ones I have worked with.
+                  <strong>Services Offered</strong>
                 </p>
-                <br />
-                <p>
-                  My experience in product design spans the spectrum from
-                  furniture and product design through product development, 3D
-                  printing, and 3D visualizations.
+
+                <p style={{ marginBottom: '5px' }}>
+                  From ideation to production, I offer a comprehensive suite of
+                  services tailored to bring your vision to life with precision
+                  and creativity.
                 </p>
-                <br />
+
                 <p>
                   Depending on your requirements, I may offer you the following
                   services:
                 </p>
                 <br />
                 <ul>
-                  <li>Ideation/Concept Sketching</li>
-                  <li>Conceptual Renderings</li>
                   <li>
-                    3D computer-aided modeling (from hand-drawn sketches to a 3D
-                    model)
+                    Ideation/Concept Sketching: From initial concepts to refined
+                    sketches, I breathe life into ideas through meticulous
+                    sketching.
                   </li>
-                  <li>3D designing and 2D specs for manufacture</li>
-                  <li>3D Printing</li>
-                  <li>Patent drawings</li>
                   <li>
-                    High-quality visualization and animation with
-                    post-production
+                    Conceptual Renderings: Transforming concepts into vivid
+                    visualizations that resonate with clients and stakeholders.
+                  </li>
+                  <li>
+                    3D Computer-Aided Modeling: Harnessing the latest technology
+                    to craft intricate 3D models that transcend imagination.
+                  </li>
+                  <li>
+                    3D Designing and 2D Specs for Manufacture: Bridging the gap
+                    between virtual design and real-world production with
+                    meticulous attention to detail.
+                  </li>
+                  <li>
+                    3D Printing: Embracing cutting-edge technology to bring
+                    designs to life with precision and efficiency.
+                  </li>
+                  <li>
+                    Patent Drawings: Crafting precise patent drawings that
+                    safeguard intellectual property and innovation.
+                  </li>
+                  <li>
+                    High-Quality Visualization and Animation with
+                    Post-Production: Elevating presentations and marketing
+                    materials with captivating visuals and immersive animations.
                   </li>
                 </ul>
                 <br />
                 <p>
-                  All of my services are created to deliver outstanding outcomes
-                  and save my clients time and money. I complete tasks of any
-                  complexity quickly and effectively.
+                  Join the revolution of innovation and creativity. Whether
+                  you're a visionary entrepreneur, a seasoned industry
+                  professional, or a forward-thinking brand, let's collaborate
+                  to transform your ideas into reality. Don't wait any longer –
+                  contact me now, and together, let's craft something truly
+                  extraordinary.
                 </p>
 
                 <br />
@@ -96,10 +144,13 @@ const AboutSection: React.FC = () => {
                   and your goals for your future business growth.
                 </p>
                 <br />
-                <p>Let’s start a conversation about your project.</p>
+                <p>
+                  Let's not just imagine the extraordinary – let's create it
+                  together. Reach out today and let's make your vision a
+                  reality.
+                </p>
                 <br />
-                <p>Don’t hesitate to contact me.</p>
-              </motion.div>
+              </div>
             </div>
 
             <div className='about-section__pen-image'>
