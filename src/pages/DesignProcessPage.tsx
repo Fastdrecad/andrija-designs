@@ -114,7 +114,7 @@ const DesignProcessImage: React.FC<DesignProcessImageProps> = ({ item }) => {
       className={`design-process-img ${isTitleVisible ? 'animate-arrow' : ''}`}
     >
       <div className='design-process-image-container'>
-        <img src={item.img} alt='work' />
+        <img src={item.img} alt='work' loading='lazy' />
       </div>
     </motion.div>
   );

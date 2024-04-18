@@ -154,7 +154,7 @@ const AboutSection: React.FC = () => {
             </div>
 
             <div className='about-section__pen-image'>
-              <img src={penImage} alt='drawing pencil' />
+              <img src={penImage} alt='drawing pencil' loading='lazy' />
             </div>
 
             <div className='about-section__signature'>

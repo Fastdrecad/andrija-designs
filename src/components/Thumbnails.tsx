@@ -22,6 +22,7 @@ const Thumbnails: React.FC<ThumbnailsProps> = ({
           onClick={() => goToSlide(slideIndex)}
         >
           <img
+            loading='lazy'
             src={item.url}
             alt='portfolio thumbnail'
             className={`thumbnails__item-image  ${

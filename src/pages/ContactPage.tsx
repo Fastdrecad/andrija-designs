@@ -168,6 +168,7 @@ const ContactPage: React.FC = () => {
                 src={contactHeroImg}
                 alt='chair mock up'
                 className='contact-page__background-image-src'
+                loading='lazy'
               />
             </div>
             <motion.div

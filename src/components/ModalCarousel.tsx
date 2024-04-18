@@ -20,6 +20,7 @@ const ModalCarousel: React.FC<ModalCarouselProps> = ({
           <img
             src={`${items[currentIndex]?.url}`}
             alt={`${items[currentIndex]?.desc}`}
+            loading='lazy'
           />
         </div>
       </div>

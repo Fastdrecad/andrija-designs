@@ -46,7 +46,12 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
         id={id as string}
         onClick={handleClick}
       >
-        <img src={url} alt='portfolio' className='portfolio-item__image' />
+        <img
+          src={url}
+          alt='portfolio'
+          className='portfolio-item__image'
+          loading='lazy'
+        />
         <div className='portfolio-item__overlay'>
           <h4 className='portfolio-item__project-name'>{projectName}</h4>
           <p className='portfolio-item__title'>{title}</p>

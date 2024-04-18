@@ -6,7 +6,7 @@ const HeroSection: React.FC = () => {
     <div className='hero-section'>
       <div className='hero-section__profile-image'>
         <div className='hero-section__profile-image-inner'>
-          <img src={myImage} alt='Andrija designer' />
+          <img src={myImage} alt='Andrija designer' loading='lazy' />
         </div>
       </div>
       <div className='hero-section__content'>
@@ -15,6 +15,7 @@ const HeroSection: React.FC = () => {
             src={aboutHero}
             alt='furniture drafting'
             className='hero-section__background-image'
+            loading='lazy'
           />
         </div>
         <div className='hero-section__triangle'></div>
